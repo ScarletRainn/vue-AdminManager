@@ -34,9 +34,11 @@
         },
         methods:{
             async registerSubmit(){
-                   const {data: res}=await this.$http.get('/api/user_data')
-                   if(this.model.username===res.data[0].username&&this.model.password===res.data[0].password){
+                   const {data: res}=await this.$http.get('/admin/adminMsg')
+                   console.log(res.checkin)
+                   if(this.model.username===res.data.username&&this.model.password===res.data.password){
                        alert('登录成功！')
+                       window.sessionStorage.setItem('checkin',res.checkin)
                        setTimeout(()=>{this.$router.push('/UserManager')},1000)
                    }else{
                        alert('账号密码错误！')

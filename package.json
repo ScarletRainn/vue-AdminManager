@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
     "mockjs": "^1.1.0",
     "vant": "^2.9.4",
     "vue": "^2.6.11",
@@ -20,6 +21,8 @@
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [

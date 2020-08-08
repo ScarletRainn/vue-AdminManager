@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
   const routes = [
     {
-      path:'/Login',
+      path:'/login',
       component: ()=>import('../views/Login.vue')
     },
     {
@@ -26,4 +26,11 @@ const router = new VueRouter({
   routes
 })
 
+
+/*router.beforeEach((to, from, next) => {
+  if (to.path === '/login') return next()
+  const check = window.sessionStorage.getItem('checkin')
+  if (check!=='ok') return next('/login')
+  next()
+})*/
 export default router
