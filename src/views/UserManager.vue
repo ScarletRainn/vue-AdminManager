@@ -12,7 +12,7 @@
                         background-color="#E6E6FA"
                         text-color="black"
                 >
-                        <el-menu-item>
+                        <el-menu-item >
                             <template slot="title">
                                 <span class="span1">用户管理</span>
                             </template>
@@ -29,17 +29,17 @@
 <script>
     import Users from '../components/users/Users'
     export default {
-        data() {
-            return {
-
-            };
+        data(){
+            return{
+                userlist:[]
+            }
         },
         components:{
             Users
         },
         methods: {
             logout() {
-                window.sessionStorage.removeItem('checkin');
+                window.sessionStorage.removeItem('token');
                 this.$router.push("/login");
             },
         },

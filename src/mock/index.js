@@ -2,9 +2,9 @@ import Mock from 'mockjs'
 
 Mock.mock('/admin/adminMsg','get', {
     status: 200,
-    message: '处理成功',
-    checkin:'ok',
-    data: {username: 'admin', password: '123456'}
+    message: '登陆成功',
+    token:'HYUKSNFDGE7WSDA6',
+    data: {employeeName: 'admin', password: '123456'}
 })
 
 Mock.mock('/admin/Users','post',function(option){
@@ -20,98 +20,36 @@ Mock.mock('/admin/Users','get',{
     status: 200,
     message: '处理成功',
     data: [{
+           id:'1',
            employeeName:'杨冀东',
            employeeWord:'123456',
-           gender:'男',
-           departmentName:'学生'
+           gender:'1',
+           departmentName:'学生',
+           admin:'1'
         },
         {
-
+            id:'2',
             employeeName:'大牛',
             employeeWord:'123456',
-            gender:'男',
-            departmentName:'军官'
+            gender:'1',
+            departmentName:'军官',
+            admin:'1'
         },
         {
+            id:'3',
             employeeName:'孙协志',
             employeeWord:'123456',
-            gender:'女',
-            departmentName:'学生'
+            gender:'0',
+            departmentName:'学生',
+            admin:'1'
         },
         {
+            id:'4',
             employeeName:'许婷',
             employeeWord:'123456',
-            gender:'女',
-            departmentName:'老师'
-        },
-        {
-            employeeName:'俞银宁',
-            employeeWord:'123456',
-            gender:'女',
-            departmentName:'学生'
-        },
-        {
-
-            employeeName:'大牛',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'军官'
-        },
-        {
-            employeeName:'大鼻',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'学生'
-        },
-        {
-            employeeName:'傅超立',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'警察'
-        },
-        {
-            employeeName:'杨冀东',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'学生'
-        },
-        {
-
-            employeeName:'大牛',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'军官'
-        },
-        {
-            employeeName:'大鼻',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'学生'
-        },
-        {
-            employeeName:'许婷',
-            employeeWord:'123456',
-            gender:'女',
-            departmentName:'老师'
-        },
-        {
-
-            employeeName:'大牛',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'军官'
-        },
-        {
-            employeeName:'大鼻',
-            employeeWord:'123456',
-            gender:'男',
-            departmentName:'学生'
-        },
-        {
-            employeeName:'许婷',
-            employeeWord:'123456',
-            gender:'女',
-            departmentName:'老师'
+            gender:'0',
+            departmentName:'老师',
+            admin:'1'
         }]
 })
 

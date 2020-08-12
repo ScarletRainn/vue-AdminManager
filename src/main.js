@@ -11,7 +11,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 Vue.use(Vant)
 Vue.config.productionTip = false
-Vue.prototype.$http=axios
+Vue.prototype.$http=axios.create({
+  baseURL:'http://localhost:9527/admin'
+})
+
 new Vue({
   router,
   store,

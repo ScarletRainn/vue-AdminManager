@@ -6,7 +6,7 @@
         <div class="head_1">用户管理系统Demo</div>
         <div class="container">
             <login-top middletop="管理员登录窗口" class="top"></login-top>
-            <login-text label="账号" placeholder="请输入账号" @inputChange="res=>model.username=res"></login-text>
+            <login-text label="账号" placeholder="请输入账号" @inputChange="res=>model.employeeName=res"></login-text>
             <login-text label="密码" placeholder="请输入密码" type="password" @inputChange="res=>model.password=res"></login-text>
             <login-btn value="登录" @registerSubmit="registerSubmit"></login-btn>
         </div>
@@ -22,7 +22,7 @@
         data(){
             return{
                 model:{
-                    username:'',
+                    employeeName:'',
                     password:''
                 }
             }
@@ -34,14 +34,14 @@
         },
         methods:{
             async registerSubmit(){
-                   const {data: res}=await this.$http.get('/admin/adminMsg')
-                   console.log(res.checkin)
-                   if(this.model.username===res.data.username&&this.model.password===res.data.password){
-                       alert('登录成功！')
-                       window.sessionStorage.setItem('checkin',res.checkin)
+                   const {data: res}=await this.$http.post('/login',this.model)
+                   console.log(res)
+                   if(res.message==='登录成功'){
+                       this.$message.success("登录成功！")
+                       sessionStorage.setItem('token',res.data.token)
                        setTimeout(()=>{this.$router.push('/UserManager')},1000)
                    }else{
-                       alert('账号密码错误！')
+                       this.$message.error("帐号密码错误！")
                    }
             }
         }
